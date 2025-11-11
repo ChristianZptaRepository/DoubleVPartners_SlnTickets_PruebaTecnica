@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "Tickets.API\\Tickets.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Tickets.Client.Test\\Tickets.Client.Test.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

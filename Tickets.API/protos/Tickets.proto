@@ -1,0 +1,41 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+package tickets;
+
+service TicketProtoService {
+  rpc AgregarTicket (AgregarTicketRequest) returns (TicketResponse);
+  rpc ObtenerTicket (ObtenerTicketRequest) returns (TicketResponse);
+  rpc ListarTickets (ListarTicketsRequest) returns (ListarTicketsResponse);
+  rpc ActualizarTicket (ActualizarTicketRequest) returns (TicketResponse);
+  rpc EliminarTicket (EliminarTicketRequest) returns (EliminarTicketResponse);
+}
+
+message ObtenerTicketRequest { int32 id = 1; }
+message AgregarTicketRequest { string usuario = 1; }
+message EliminarTicketRequest { int32 id = 1; }
+
+message ListarTicketsRequest { 
+    int32 page_number = 1;
+    int32 page_size = 2;
+}
+
+message ActualizarTicketRequest {
+    int32 id = 1;
+    string usuario = 2;
+    string estatus = 3;
+}
+
+message TicketResponse {
+  int32 id = 1;
+  string usuario = 2;
+  google.protobuf.Timestamp fecha_creacion = 3;
+  string estatus = 4;
+}
+
+message EliminarTicketResponse {
+    bool success = 1;
+}
+
+message ListarTicketsResponse {
+  repeated TicketResponse tickets = 1;
+}

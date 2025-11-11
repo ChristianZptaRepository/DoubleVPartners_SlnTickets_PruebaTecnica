@@ -1,0 +1,3 @@
+obj\Debug\net8.0\Protos/Tickets.cs \
+obj\Debug\net8.0\Protos/TicketsGrpc.cs: C:/Users/CRIST/.nuget/packages/grpc.tools/2.76.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/Tickets.proto
